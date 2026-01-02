@@ -6,6 +6,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
     <title>FOOTBALL FOR LIFE | Raduk Crispine Onyango</title>
+    <meta name="description" content="Football portfolio of Raduk Crispine Onyango showcasing journey, photos and match highlights">
+<meta name="keywords" content="Football, Kenya Footballer, Centre Back, Phantom FC">
+<meta name="author" content="Raduk Crispine Onyango">
+<a href="Raduk_CV.pdf" download style="color:white;font-weight:bold;">
+  <i class="fas fa-download"></i> Download My Football CV
+</a>
+
+
     <style>
         /* Reset and Base Styles */
         * {
@@ -537,6 +545,12 @@
             animation: fadeInUp 0.8s ease-out;
         }
 
+        .dark-mode {
+  background: #111;
+  color:white;
+}
+
+
         /* Scroll to top button */
         .scroll-top {
             position: fixed;
@@ -597,8 +611,13 @@
         <div class="section-title">
             <h2>MY FOOTBALL JOURNEY</h2>
         </div>
+
+        <li><a href="#" onclick="toggleTheme()"><i class="fas fa-moon"></i> Mode</a></li>
+
         
         <div class="history-content fade-in">
+            
+            
             <p>My name is Raduk Crispine Onyango. I started playing football at a tender age where I was a rugby player playing for Shamas Rugby Foundation led by Coach Will and his assistant Coach Eduardo.</p>
             <p>I came to realize that I had a bigger potential in football, that's where I moved from playing rugby and joined football in the year 2011.</p>
             <p>My first football team to join was called Santos led by Coach Rex. He himself saw that I had good talent in football and that football could take me very far, but he always emphasized one thing: <strong>Discipline</strong>.</p>
@@ -646,6 +665,7 @@
             </div>
         </div>
     </section>
+
 
     <!-- Photo Gallery Section -->
     <section id="gallery" class="section" style="background: #f8f9fa;">
@@ -705,6 +725,20 @@
 
     <!-- Footer -->
     <footer id="contact">
+
+        <form id="contactForm" style="margin-top:30px;">
+  <input type="text" placeholder="Your Name" required style="padding:10px;width:80%;margin:10px;">
+  <input type="email" placeholder="Your Email" required style="padding:10px;width:80%;margin:10px;">
+  <textarea placeholder="Your Message" required style="padding:10px;width:80%;margin:10px;"></textarea>
+  <br>
+  <button type="submit" style="padding:12px 30px;background:#ff6b00;color:white;border:none;border-radius:5px;">
+    Send Message
+  </button>
+</form>
+
+
+
+
         <div class="footer-content">
             <h2 style="color: #ff6b00; font-family: 'Bebas Neue', sans-serif; font-size: 2.5rem;">FOOTBALL FOR LIFE</h2>
             <p style="font-size: 1.2rem; margin: 20px 0;">Football is more than a game, it's a lifestyle</p>
@@ -721,7 +755,7 @@
                 <p><i class="fas fa-phone"></i> +254 716 161 422</p>
             </div>
             
-            <p style="margin-top: 30px; opacity: 0.7;">&copy; 2023 Raduk Crispine Onyango. All rights reserved.</p>
+            <p style="margin-top: 30px; opacity: 0.7;">&copy; @2025 Raduk Crispine Onyango. All rights reserved.</p>
         </div>
     </footer>
 
@@ -733,14 +767,10 @@
     <script>
         // List of all your images
         const imageFiles = [
-            '1.JPG', '3.JPG', '7.JPG', '8.JPG', '9.JPG', '10.JPG', 
-            '11.JPG', '13.JPG', '14.JPG', '15.JPG', '16.JPG', '17.JPG', 
-            '18.JPG', '19.JPG', '20.JPG', '21.JPG', '22.JPG', '23.JPG', 
-            '24.JPG', '25.JPG', '26.JPG', '28.JPG', '29.JPG', '30.JPG', 
-            '31.JPG', '32.JPG', '33.JPG',  'Onyango.JPG',  
-            '37.JPG', '38.JPG', '39.JPG', '40.JPG', '42.JPG', 
-         '44.JPG', '45.JPG', '46.JPG', '47.JPG', '48.JPG', 
-            '49.JPG', '50.JPG', '52.JPG'
+             
+            '61.JPG','24.JPG', '26.JPG', '28.JPG', '29.JPG', '30.JPG', 
+            '31.JPG', '32.JPG',  'Onyango.JPG',  
+            '37.JPG', '38.JPG', '39.JPG','8.JPG','9.JPG','40.JPG','31.JPG','23.JPG','17.JPG','16.JPG','13.JPG','9.JPG','56.JPG','57.JPG','58.JPG','59.JPG','60.JPG',
         ];
 
         // Current image index for lightbox
@@ -748,6 +778,13 @@
         let images = [];
 
         // Load gallery images
+
+        function filterImages(type) {
+  document.querySelectorAll('.gallery-item').forEach(item => {
+    item.style.display = 'block'; 
+  });
+}
+
         function loadGallery() {
             const gallery = document.getElementById('photoGallery');
             
@@ -839,7 +876,7 @@
                     });
                 }
             });
-        });
+        }); 
 
         // Initialize when page loads
         document.addEventListener('DOMContentLoaded', () => {
@@ -881,6 +918,18 @@
         document.querySelectorAll('.section').forEach(section => {
             observer.observe(section);
         });
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  alert('Thank you! Your message has been sent.');
+  this.reset();
+});
+function toggleTheme() {
+  document.body.classList.toggle('dark-mode');
+}
+
+
+
+
     </script>
 </body>
 </html>
